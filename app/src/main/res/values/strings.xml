@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">HospitalRegTopicsPrj</string>
+    <string name="System_Msg_OpenNet">請啟用網路連線之後再次開啟本APP!!</string>
+    <string name="default_dialog_positive">確定</string>
+    <string name="default_dialog_negative">取消</string>
+    <string name="regbtn">註冊病患資料</string>
+    <string name="authBtn">用戶認證</string>
+    <string name="logoutBtn">登出</string>
+    <string name="resBtn">預約掛號</string>
+    <string name="Auth_interface_title">身分認證</string>
+    <string name="Auth_interface_Content">請輸入身份證字號以便進行認證</string>
+    <string name="Auth_interface_okbtn">開始認證</string>
+    <string name="reg_input_null_msg">資料值不可為空!請填寫完畢!</string>
+    <string name="reg_textView_FirstName">姓名</string>
+    <string name="reg_textView_LastName">名子</string>
+    <string name="reg_textView_birthday">出生年月日</string>
+    <string name="reg_textView_rocid">身分證</string>
+    <string name="reg_btn_submit">資料送出</string>
+    <string name="Family_title">請選擇門診</string>
+    <string name="Reservation_title">請選擇看診時段</string>
+    <string name="doctorTitle">請選擇看診醫生</string>
+    <string name="btnforFamily">依照科別名稱來掛號</string>
+    <string name="btnforDoctor">依照醫生名稱來掛號</string>
+    <string name="regDelbutton">刪除預約</string>
+    <string name="HospLocBtn">醫院位置</string>
+    <!-- AlertDialog -->
+    <string name="Logout_Title">你已經登出</string>
+    <string name="Logout_msg">你已經登出，如需繼續使用請按下是，如果不需要系統將會關閉APP</string>
+    <string name="AuthAlert_title">需要用戶認證</string>
+    <string name="AuthAlert_msg">需要用戶認證才可以進行掛號程序，是否進行認證(只須執行一次)</string>
+    <string name="usr_permit_title">操作許可</string>
+    <string name="usr_permit_content">警告！有些操作將不可逆，如需執行請按下是</string>
+    <!-- Toast -->
+    <string name="Sys_Auth_Success">認證已經完成!!即可開始使用預約程序</string>
+    <string name="Sys_Auth_Failed">認證失敗或尚未認證，請再次認證，如你第一次使用請先進行註冊</string>
+    <string name="Sys_close_App_NotConn">系統已經關閉APP，請開啟連線後再次開啟本APP</string>
+    <string name="Sys_NotConn_close">你尚未開啟網路功能，系統已將本APP所有功能關閉，請開啟連線後再次啟用</string>
+    <string name="Error_Not_Network_title">發生錯誤，請檢查網際網路連線狀態</string>
+    <string name="Error_Not_Network_Msg">系統偵測到你沒有連上網際網路，請啟用網路連線嘗試</string>
+    <string name="data_upload_success">資料新增完成!</string>
+    <string name="usr_permit_show_success">操作順利完成！</string>
+    <string name="data_upload_failed">資料上傳失敗，請確認是否開啟網路通訊</string>
+    <string name="logout_success_msg">你已經登出成功！請重新登入</string>
+    <!--  ProgressDialog  -->
+    <string name="pDialog_init_title">初始化進行中</string>
+    <string name="pDialog_init_Msg">系統正在進行初始化中，請稍後</string>
+    <string name="pDialog_logout_title">系統登出中....</string>
+    <string name="pDialog_logout_content">系統正在進行登出程序中，請稍後</string>
+    <string name="pDialog_postData_title">正在處理中請稍後</string>
+    <string name="pDialog_postData_Content">操作正在處理中請稍等片刻</string>
+    <string name="pDialog_getData_title">正在連線到遠端伺服器</string>
+    <string name="pDialog_getData_Content">正在向遠端伺服器請求資料中，請稍等片刻</string>
+    <string name="title_activity_res_del">resDelActivity</string>
+    <string name="title_activity_delres">DelresActivity</string>
+    <!--NotificationCompat -->
+    <string name="nc_msg_reg_title">提醒：你有預約看診通知！</string>
+    <string name="nc_msg_reg_msg">你預約的門診: </string>
+    <string name="nc_msg_reg_msg_doctor">醫生為：</string>
+    <string name="nc_msg_reg_msg_attime">將在</string>
+    <string name="nc_msg_reg_msg_attime_end">開始看診！</string>
+    <string name="title_activity_hosp_loc_maps">Map</string>
+</resources>
