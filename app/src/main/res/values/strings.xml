@@ -7,6 +7,8 @@
     <string name="authBtn">用戶認證</string>
     <string name="logoutBtn">登出</string>
     <string name="resBtn">預約掛號</string>
+    <string name="nowDayregBtn">瀏覽本日看診資訊</string>
+    <string name="ExitAppBtn">離開本程式</string>
     <string name="Auth_interface_title">身分認證</string>
     <string name="Auth_interface_Content">請輸入身份證字號以便進行認證</string>
     <string name="Auth_interface_okbtn">開始認證</string>
@@ -54,9 +56,7 @@
     <string name="title_activity_delres">DelresActivity</string>
     <!--NotificationCompat -->
     <string name="nc_msg_reg_title">提醒：你有預約看診通知！</string>
-    <string name="nc_msg_reg_msg">你預約的門診: </string>
-    <string name="nc_msg_reg_msg_doctor">醫生為：</string>
-    <string name="nc_msg_reg_msg_attime">將在</string>
-    <string name="nc_msg_reg_msg_attime_end">開始看診！</string>
+    <string name="nc_msg_reg_msg">你有預約看診，點選通知即可觀看詳細資訊</string>
     <string name="title_activity_hosp_loc_maps">Map</string>
+    <string name="title_activity_hosp_loc">Map</string>
 </resources>

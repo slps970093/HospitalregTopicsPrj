@@ -109,6 +109,9 @@ public class SetAlarmActivity extends AppCompatActivity {
                     AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                     am.set(AlarmManager.RTC_WAKEUP, mCal.getTimeInMillis(), pi);
                     Toast.makeText(SetAlarmActivity.this,R.string.data_upload_success,Toast.LENGTH_SHORT).show();
+                    Intent goto_intent = new Intent();
+                    goto_intent.setClass(SetAlarmActivity.this,MainActivity.class);
+                    startActivity(goto_intent);
                 }
             },mCal.get(Calendar.HOUR_OF_DAY), mCal.get(Calendar.MINUTE), false);
             tpd.show();

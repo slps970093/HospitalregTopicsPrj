@@ -137,6 +137,7 @@ public class ReservationActivity extends AppCompatActivity {
             super.onPostExecute(aVoid);
         }
     }
+    //設定自動提醒
     public Runnable SetAlarm = new Runnable() {
 
         @Override
@@ -222,6 +223,7 @@ public class ReservationActivity extends AppCompatActivity {
                     message.close();
                     String msg = new String(message.toByteArray());
                     if(isDoctor){
+                        /*
                         JSONObject jsonObject = new JSONObject(msg);
                         JSONArray sid = jsonObject.getJSONArray("sid");
                         JSONArray date = jsonObject.getJSONArray("date");
@@ -231,7 +233,16 @@ public class ReservationActivity extends AppCompatActivity {
                             cid.add(sid.get(i));
                             show_data.add("看診日期："+date.get(i)+" 時間："+time.get(i)+" 診："+fName.get(i));
                         }
+                        */
+                        JSONArray jsonArray = new JSONArray(msg);
+                        int tmp = 0;
+                        for(int i =0;i<=jsonArray.length()-1;i++){
+                            cid.add(jsonArray.getJSONObject(tmp).getInt("sid"));
+                            show_data.add("看診日期："+jsonArray.getJSONObject(tmp).getString("date")+" 時間："+jsonArray.getJSONObject(tmp).getString("time")+" 診："+jsonArray.getJSONObject(tmp).getString("fName"));
+                            tmp++;
+                        }
                     }else{
+                        /*
                         JSONObject jsonObject = new JSONObject(msg);
                         JSONArray sid = jsonObject.getJSONArray("sid");
                         JSONArray date = jsonObject.getJSONArray("date");
@@ -240,6 +251,14 @@ public class ReservationActivity extends AppCompatActivity {
                         for(int i = 0; i<=sid.length()-1;i++){
                             cid.add(sid.get(i));
                             show_data.add("看診日期："+date.get(i)+" 時間："+time.get(i)+" 看診醫生："+pName.get(i));
+                        }
+                        */
+                        JSONArray jsonArray = new JSONArray(msg);
+                        int tmp = 0;
+                        for(int i =0;i<=jsonArray.length()-1;i++){
+                            cid.add(jsonArray.getJSONObject(tmp).getInt("sid"));
+                            show_data.add("看診日期："+jsonArray.getJSONObject(tmp).getString("date")+" 時間："+jsonArray.getJSONObject(tmp).getString("time")+" 看診醫生："+jsonArray.getJSONObject(tmp).getString("pName"));
+                            tmp++;
                         }
                     }
                 }

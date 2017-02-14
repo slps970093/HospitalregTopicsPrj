@@ -23,15 +23,19 @@ public class MyRegBroadcast extends BroadcastReceiver {
         //取得通知管理器
         NotificationManager noMgr = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         //當使用者按下通知欄中的通知時要開啟的 Activity
-        Intent call = new Intent(context, MainActivity.class);
+        Intent call = new Intent(context, TodayRegActivity.class);
         //建立待處理意圖
-        PendingIntent pIntent = PendingIntent.getActivity(context, 0, call, 0);
+        PendingIntent pIntent = PendingIntent.getActivity(context, 0, call, PendingIntent.FLAG_UPDATE_CURRENT);
         //指定通知出現時要顯示的文字,幾秒後會消失只剩圖示
         //建立通知物件
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
-        builder.setContentTitle(R.string.nc_msg_reg_title+"");
-        builder.setContentText(R.string.nc_msg_reg_msg+bundle.getString("message")+R.string.nc_msg_reg_msg_attime+bundle.getString("datetime")+R.string.nc_msg_reg_msg_attime_end+"  "+R.string.nc_msg_reg_msg_doctor+bundle.getString("doctor"));
+        builder.setContentTitle(context.getString(R.string.nc_msg_reg_title));
+        String str[] = new String[10];
+        str[0] =context.getResources().getString(R.string.nc_msg_reg_msg);
+        Log.e("test",str[0]);
+        builder.setContentText(str[0]);
         builder.setSmallIcon(R.mipmap.ic_launcher);
+        builder.setContentIntent(pIntent);
         Notification notification = builder.build();
         noMgr.notify(1,notification);
     }

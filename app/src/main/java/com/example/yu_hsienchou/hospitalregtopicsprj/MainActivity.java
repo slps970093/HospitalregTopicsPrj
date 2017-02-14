@@ -8,6 +8,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Looper;
+import android.support.multidex.MultiDex;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,11 +26,12 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
-    private Button regBtn;
+    private Button hospLocBtn;
     private Button authBtn;
     private Button resBtn;
     private Button logoutBtn;
     private Button regDelButton;
+    private Button todayregBtn;
     private ProgressDialog mDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +39,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         boolean isConn = isConnected(); //檢查連線狀態
         //regBtn = (Button) findViewById(R.id.regbtn);
+        hospLocBtn = (Button)findViewById(R.id.hospLocBtn);
         authBtn = (Button) findViewById(R.id.authBtn);
         logoutBtn = (Button) findViewById(R.id.logoutBtn);
         resBtn = (Button)findViewById(R.id.resbtn);
         regDelButton = (Button)findViewById(R.id.resDelete);
+        todayregBtn = (Button) findViewById(R.id.todayRegBtn);
 
         if(isConn){
             new Sysinit().execute();
@@ -49,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
             authBtn.setOnClickListener(btnOnclick);
             logoutBtn.setOnClickListener(btnOnclick);
             regDelButton.setOnClickListener(btnOnclick);
+            hospLocBtn.setOnClickListener(btnOnclick);
+            todayregBtn.setOnClickListener(btnOnclick);
         }else{
             //跳出錯誤訊息，並強制關閉，或禁用所有功能
             AlertDialog.Builder NotNetworkmsg = new AlertDialog.Builder(MainActivity.this);
@@ -66,13 +72,19 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(DialogInterface dialog, int which) {
                     Toast.makeText(MainActivity.this,R.string.Sys_NotConn_close,Toast.LENGTH_SHORT).show();
                     //關閉所有按鈕
-                    regBtn.setEnabled(false);
+
                     authBtn.setEnabled(false);
                     logoutBtn.setEnabled(false);
                 }
             });
             NotNetworkmsg.show();
         }
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
     }
     private Button.OnClickListener btnOnclick = new Button.OnClickListener(){
         public void onClick(View v){
@@ -98,7 +110,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
             if(v.getId()==R.id.hospLocBtn){
-
+                intent.setClass(MainActivity.this,HospLocActivity.class);
+                startActivity(intent);
+            }
+            if(v.getId() == R.id.todayRegBtn){
+                Log.e("hello","world");
+                intent.setClass(MainActivity.this,TodayRegActivity.class);
+                startActivity(intent);
             }
 
         }

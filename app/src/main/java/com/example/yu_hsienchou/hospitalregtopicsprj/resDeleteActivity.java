@@ -185,6 +185,7 @@ public class resDeleteActivity extends AppCompatActivity {
                     message.close();
                     String msg = new String(message.toByteArray());
                     Log.e("str",msg);
+                    /*
                     JSONObject jsonObject = new JSONObject(msg);
                     JSONArray rid = jsonObject.getJSONArray("id");
                     JSONArray addDate  = jsonObject.getJSONArray("addDate");
@@ -196,6 +197,14 @@ public class resDeleteActivity extends AppCompatActivity {
                         Log.e("hello","hello");
                         r_id.add(rid.getInt(i));
                         show_data.add(" 診:"+Name.get(i)+" 開始看診日:"+startDay.get(i)+" 開始看診時間:"+startTime.get(i)+" 資料新增時間:"+addDate.get(i));
+                    }
+                    */
+                    JSONArray jsonArray = new JSONArray(msg);
+                    short tmp = 0;
+                    for(int i=0;i<jsonArray.length();i++){
+                        r_id.add(jsonArray.getJSONObject(tmp).getInt("id"));
+                        show_data.add(" 診:"+jsonArray.getJSONObject(tmp).getString("Name")+" 開始看診日:"+jsonArray.getJSONObject(tmp).getString("startDay")+" 開始看診時間:"+jsonArray.getJSONObject(tmp).getString("startTime")+" 資料新增時間:"+jsonArray.getJSONObject(tmp).getString("addDate"));
+                        tmp++;
                     }
                 }else{
                     InputStream is = conn.getErrorStream();

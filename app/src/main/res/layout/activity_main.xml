@@ -12,7 +12,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:weightSum="1">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -60,17 +61,32 @@
             android:layout_height="wrap_content">
 
             <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/todayRegBtn"
+                android:layout_weight="0.46"
+                android:text="@string/nowDayregBtn" />
+
+            <Button
                 android:text="@string/HospLocBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/hospLocBtn"
                 android:layout_weight="1" />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/todayBtn">
+
             <Button
-                android:text="Button"
+                android:text="@string/ExitAppBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/button8"
+                android:id="@+id/button2"
                 android:layout_weight="1" />
         </LinearLayout>
     </LinearLayout>
