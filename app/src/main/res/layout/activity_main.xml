@@ -15,6 +15,13 @@
         android:layout_height="match_parent"
         android:weightSum="1">
 
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:name="com.example.yu_hsienchou.hospitalregtopicsprj.MaintopFragment"
+            android:id="@+id/fragment2"
+            tools:layout="@layout/fragment_maintop" />
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"

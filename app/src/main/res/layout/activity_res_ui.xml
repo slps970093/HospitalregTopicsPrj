@@ -1,33 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_res_delete"
+    android:id="@+id/activity_res_ui"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.yu_hsienchou.hospitalregtopicsprj.resDeleteActivity">
+    tools:context="com.example.yu_hsienchou.hospitalregtopicsprj.resUIActivity">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:weightSum="1">
 
         <fragment
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:name="com.example.yu_hsienchou.hospitalregtopicsprj.MaintopFragment"
-            android:id="@+id/fragment4"
+            android:id="@+id/fragment"
             tools:layout="@layout/fragment_maintop" />
 
-        <fragment
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="299dp"
+            android:id="@+id/UI"
+            android:layout_weight="0.80">
+
+        </FrameLayout>
+
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:name="com.example.yu_hsienchou.hospitalregtopicsprj.resDellstFragment"
-            android:id="@+id/fragment6"
-            tools:layout="@layout/fragment_res_dellst" />
+            android:id="@+id/footer"
+            android:layout_weight="0.11">
+
+        </FrameLayout>
 
     </LinearLayout>
+
+
 </RelativeLayout>

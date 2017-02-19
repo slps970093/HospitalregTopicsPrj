@@ -27,12 +27,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".doctorlstActivity" />
-        <activity android:name=".FamilyActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".resDeleteActivity" />
-        <activity android:name=".ReservationActivity" />
-        <activity android:name=".reservationMenuActivity" />
         <activity android:name=".SetAlarmActivity" />
         <!-- 當鬧鈴時間到達時要執行的程式 -->
         <receiver android:name=".MyRegBroadcast">
@@ -55,7 +51,8 @@
         <activity
             android:name=".HospLocActivity"
             android:label="@string/title_activity_hosp_loc" />
-        <activity android:name=".TodayRegActivity"></activity>
+        <activity android:name=".TodayRegActivity" />
+        <activity android:name=".resUIActivity"></activity>
     </application>
 
 </manifest>

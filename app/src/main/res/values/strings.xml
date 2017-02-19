@@ -59,4 +59,7 @@
     <string name="nc_msg_reg_msg">你有預約看診，點選通知即可觀看詳細資訊</string>
     <string name="title_activity_hosp_loc_maps">Map</string>
     <string name="title_activity_hosp_loc">Map</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

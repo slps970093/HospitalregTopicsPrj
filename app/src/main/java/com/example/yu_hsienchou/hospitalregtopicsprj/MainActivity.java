@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
             if(v.getId()==R.id.resbtn){
-                intent.setClass(MainActivity.this,reservationMenuActivity.class);
+                intent.setClass(MainActivity.this,resUIActivity.class);
                 startActivity(intent);
             }
             if(v.getId()==R.id.resDelete){
