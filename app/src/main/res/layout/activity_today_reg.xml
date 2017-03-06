@@ -15,24 +15,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/datalst" />
-
-        <TextView
+        <fragment
+            android:id="@+id/fragment5"
+            android:name="com.example.yu_hsienchou.hospitalregtopicsprj.MaintopFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:id="@+id/Diagnosis" />
+            tools:layout="@layout/fragment_maintop" />
 
-        <TextView
+        <fragment
+            android:id="@+id/fragment7"
+            android:name="com.example.yu_hsienchou.hospitalregtopicsprj.TodayRegFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/info" />
-
+            tools:layout="@layout/fragment_today_reg" />
     </LinearLayout>
 
 </RelativeLayout>

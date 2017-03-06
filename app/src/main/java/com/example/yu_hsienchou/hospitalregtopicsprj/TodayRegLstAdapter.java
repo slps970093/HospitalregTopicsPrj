@@ -38,7 +38,7 @@ public class TodayRegLstAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        convertView = LayoutInflater.from(mContext).inflate(R.layout.activity_today_reg,parent,false);
+        convertView = LayoutInflater.from(mContext).inflate(R.layout.fragment_today_reg,parent,false);
         TextView txt_Section = (TextView) convertView.findViewById(R.id.Diagnosis);
         TextView txt_info = (TextView) convertView.findViewById(R.id.info);
         txt_info.setText(mData.get(position).getInformation());
